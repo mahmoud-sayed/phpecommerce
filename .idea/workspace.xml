@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05ccd616-ed51-4277-83e5-a6dc89c8ad63" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/admin/Logout.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/includes/functions/function.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/includes/languages/arabic.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/languages/arabic.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/includes/languages/english.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/languages/english.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/includes/templets/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/templets/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/init.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/init.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/layout/css/backend.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin/layout/css/backend.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/layout/js/backend.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/layout/js/backend.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -161,16 +153,18 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/members.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4134">
+            <state relative-caret-position="-1412">
               <caret line="162" column="45" selection-start-line="162" selection-start-column="45" selection-end-line="162" selection-end-column="45" />
               <folding>
                 <element signature="e#6#88#0#PHP" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/layout/js/backend.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="260">
@@ -188,11 +182,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/includes/functions/function.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="21" column="80" selection-start-line="21" selection-start-column="80" selection-end-line="21" selection-end-column="80" />
+            <state relative-caret-position="292">
+              <caret line="41" column="19" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -200,8 +194,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/includes/templets/footer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+            <state>
+              <caret lean-forward="true" />
             </state>
           </provider>
         </entry>
@@ -326,12 +320,12 @@
       <workItem from="1556707802768" duration="1202000" />
       <workItem from="1556877829837" duration="10669000" />
       <workItem from="1556914520456" duration="71000" />
-      <workItem from="1556955977768" duration="1292000" />
+      <workItem from="1556955977768" duration="2332000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119775000" />
+    <option name="totallyTimeSpent" value="120815000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -458,10 +452,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/includes/languages/english.php">
+    <entry file="file://$PROJECT_DIR$/admin/members.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="14" column="19" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="19" />
+        <state relative-caret-position="-1412">
+          <caret line="162" column="45" selection-start-line="162" selection-start-column="45" selection-end-line="162" selection-end-column="45" />
+          <folding>
+            <element signature="e#6#88#0#PHP" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -472,20 +471,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/members.php">
+    <entry file="file://$PROJECT_DIR$/admin/includes/languages/english.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4134">
-          <caret line="162" column="45" selection-start-line="162" selection-start-column="45" selection-end-line="162" selection-end-column="45" />
-          <folding>
-            <element signature="e#6#88#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="364">
+          <caret line="14" column="19" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/layout/js/backend.js">
+    <entry file="file://$PROJECT_DIR$/admin/includes/templets/footer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/includes/functions/function.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="41" column="19" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -496,17 +499,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/includes/templets/footer.php">
+    <entry file="file://$PROJECT_DIR$/admin/layout/js/backend.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/includes/functions/function.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="21" column="80" selection-start-line="21" selection-start-column="80" selection-end-line="21" selection-end-column="80" />
+        <state relative-caret-position="260">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
