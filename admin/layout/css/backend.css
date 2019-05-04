@@ -1,11 +1,12 @@
+/* start main roles */
 
 /* start main roles */
-body{
-   /* background-color: #3a3af4;    */
-
+body {
+    background-color: #f4f4f4;
+    font-size: 16px;
 }
-/* end main roles */
 
+/* end main roles */
 
 /* start login form */
 .login {
@@ -17,11 +18,14 @@ body{
     margin-bottom: 10px;
 }
 
-.login .form-control{
-     background-color: #fafafa;
+.login .form-control {
+    background-color: #fafafa;
 }
 
-.login .btn{
+.login .btn {
     background-color: #008dde;
 }
+
 /* end login form */
+
+/* START bootstrap edit */

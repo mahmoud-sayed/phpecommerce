@@ -1,0 +1,48 @@
+<?php
+/* this function to echo the page title if it exist */
+
+function gitTitle(){
+    global $pagetitle;
+    if(isset($pagetitle)){
+        echo $pagetitle;
+    }else{
+        echo 'Default';
+    }
+}
+    /*
+     * redirect function V2.0
+     * this function accept parameters
+     * $theMessage = to echo the [error , success , warning]
+     * $seconds = the seconds before redirecting
+     */
+function redirectToHome($theMessage, $url= null, $seconds = 3){
+    if ($url === null){
+        $url = 'index.php';
+    }else{
+        if (isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] !== ''){
+            $url = $_SERVER['HTTP_REFERER'];
+        }else{
+            $url = 'index.php';
+        }
+    }
+    echo $theMessage;
+    echo '<div class="alert alert-info container">' . 'you will be directed to ' . $url . ' after ' . $seconds . ' seconds'.'</div>';
+    header("refresh:$seconds;url=$url");
+    exit();
+}
+
+/*
+ * check item function v1.0
+ * function to check items in database [function accept parameters]
+ * $select = the item to select [Example:   user, item, category]
+ * $from = the table to select from [Example:   user, item, category]
+ * $value = the value of select [Example: osama , Box, or any name]
+ */
+
+function checkItems($select, $from, $value){    //hear we create function accept parameter
+    global $con;                                // hear we create public var
+    $statment = $con->prepare("SELECT $select FROM $from WHERE $select = ?");   // hear we selecting the items we will work on
+    $statment->execute(array($value));  // hear we get the value
+    $count = $statment->rowCount(); // hear we check if the name exist or not
+    return $count;  // hear we return the hole function
+}
