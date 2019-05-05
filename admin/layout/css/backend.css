@@ -29,3 +29,24 @@ body {
 /* end login form */
 
 /* START bootstrap edit */
+/****************************************************************/
+/*start dashboard style*/
+.home-stats .status
+{
+    background-color: #eee;
+    border: 1px solid #ccc;
+    padding: 20px;
+    font-size: 15px;
+}
+
+.home-stats .status span
+{
+    display: block;
+    font-size: 50px;
+}
+
+.latest
+{
+    margin-top: 30px    ;
+}
+/*end dashboard style*/
