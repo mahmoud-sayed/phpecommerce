@@ -10,7 +10,12 @@ if (isset($_SESSION['userName'])) {
     include 'init.php';
     $do = isset($_GET['do']) ? $_GET['do'] : 'Manage';
     if ($do == 'Manage') {
-            $stmt = $con->prepare("SELECT * FROM users WHERE groupId !=1");
+        $query = '';
+        if (isset($_GET['page']) && $_GET['page'] == 'pending'){
+            $query = 'AND regstatus = 0';
+
+        }
+            $stmt = $con->prepare("SELECT * FROM users WHERE groupId !=1 $query");
             $stmt->execute();
             $rows = $stmt->fetchAll();
 
@@ -40,9 +45,12 @@ if (isset($_SESSION['userName'])) {
                             echo '<td>' . $row['date'] . '</td>';
 
                             echo '<td>' .
-                                    '<a href="members.php?do=edit&userId=' .$row['userId'] . '" class="btn btn-success">' .'<i class="fa fa-edit"></i>'. 'Edit' . '</a>' .
-                                    '<a href="members.php?do=Delete&userId=' .$row['userId'] . '" class="btn btn-danger confirm ">'.'<i class="fa fa-trash"></i>' . 'Delete' . '</a>'
-                                    . '</td>';
+                                    '<a href="members.php?do=edit&userId=' .$row['userId'] . '" class="btn btn-success ">' .'<i class="fa fa-edit"></i>'. 'Edit' . '</a>' .
+                                    '<a href="members.php?do=Delete&userId=' .$row['userId'] . '" class="btn btn-danger confirm activate">'.'<i class="fa fa-trash"></i>' . 'Delete' . '</a>';
+                                    if ($row['regstatus'] == 0){
+                                        echo ''. '<a href="members.php?do=activate&userId=' .$row['userId'] . '" class="btn btn-primary activate activate">'.'<i class="fa fa-check"></i>' . 'Activate' . '</a>';
+                                    }
+                            echo '</td>';
 
                             echo '</tr>';
                         }
@@ -155,7 +163,7 @@ if (isset($_SESSION['userName'])) {
                 }else {
                     // the next step will add new data in the database
 
-                    $stmt = $con->prepare("INSERT INTO users(userName, password, email, fullName, date) VALUES(:zname, :zpassword , :zemail , :zfullname, now())");
+                    $stmt = $con->prepare("INSERT INTO users(userName, password, email, fullName,regstatus, date) VALUES(:zname, :zpassword , :zemail , :zfullname, 1,now())");
                     $stmt->execute([
                         'zname' => $user,
                         'zpassword' => $hashpass,
@@ -283,7 +291,7 @@ if (isset($_SESSION['userName'])) {
 
         }
         echo '</div>';
-    }elseif ($do = 'Delete'){
+    }elseif ($do == 'Delete'){
         $userId = isset($_GET['userId']) && is_numeric($_GET['userId']) ? intval($_GET['userId']) : 0; // to check if this user id number or no and get the integer val of it
 
         $check = checkItems('userId', 'users', $userId);// hear we select all the data form the database depend on id
@@ -296,7 +304,23 @@ if (isset($_SESSION['userName'])) {
             redirectToHome($theMessage,'back');
 
         }else {
-            $theMessage = '<div class="container alert alert-success" style="margin-top: 50px">this Id is not exist </div>';
+            $theMessage = '<div class="container alert alert-danger" style="margin-top: 50px">this Id is not exist </div>';
+            redirectToHome($theMessage);
+        }
+    }elseif ($do == 'activate'){
+        echo '<h1 class="text-center">Activate Member</h1>';
+        $userId = isset($_GET['userId']) && is_numeric($_GET['userId']) ? intval($_GET['userId']) : 0; // to check if this user id number or no and get the integer val of it
+
+        $check = checkItems('userId', 'users', $userId);// hear we select all the data form the database depend on id
+
+        if ($check > 0) { // hear we say it the row exist and greater than 0 sho the form
+            $stmt = $con->prepare("UPDATE users SET regstatus = 1 WHERE userId = ?");
+            $stmt->execute([$userId]);
+            $theMessage = '<div class="container alert alert-success" style="margin-top: 50px">have been updated</div>';
+            redirectToHome($theMessage,'back');
+
+        }else {
+            $theMessage = '<div class="container alert alert-danger" style="margin-top: 50px">this Id is not exist </div>';
             redirectToHome($theMessage);
         }
     }
