@@ -1,4 +1,5 @@
-<?php 
+<?php
+    ob_start();
     session_start();
     if (isset($_SESSION['userName'])) {
         include 'init.php';
@@ -66,3 +67,6 @@
         header('location: index.php');
         exit();
     }
+    ob_end_flush();
+
+    ?>

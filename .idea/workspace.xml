@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05ccd616-ed51-4277-83e5-a6dc89c8ad63" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/dashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/includes/functions/function.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/functions/function.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/includes/templets/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/templets/navbar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/layout/css/backend.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin/layout/css/backend.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/members.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/members.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -105,16 +100,16 @@
         <counts>
           <entry key="css" value="930" />
           <entry key="js" value="200" />
-          <entry key="php" value="13273" />
+          <entry key="php" value="13311" />
           <entry key="txt" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="930" />
-          <entry key="HTML" value="16" />
+          <entry key="HTML" value="17" />
           <entry key="JavaScript" value="200" />
-          <entry key="PHP" value="13246" />
+          <entry key="PHP" value="13283" />
           <entry key="PLAIN_TEXT" value="12" />
           <entry key="SQL" value="4" />
         </counts>
@@ -150,7 +145,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/members.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="503">
@@ -171,14 +166,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/dashboard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="39" column="78" selection-start-line="39" selection-start-column="78" selection-end-line="39" selection-end-column="78" />
+            <state relative-caret-position="434">
+              <caret line="71" column="6" selection-start-line="71" selection-start-column="6" selection-end-line="71" selection-end-column="6" />
               <folding>
                 <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#i#0;n#a#0;n#li#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -254,8 +250,8 @@
         <option value="$PROJECT_DIR$/admin/includes/templets/navbar.php" />
         <option value="$PROJECT_DIR$/admin/includes/functions/function.php" />
         <option value="$PROJECT_DIR$/admin/layout/css/backend.css" />
-        <option value="$PROJECT_DIR$/admin/dashboard.php" />
         <option value="$PROJECT_DIR$/admin/members.php" />
+        <option value="$PROJECT_DIR$/admin/dashboard.php" />
       </list>
     </option>
   </component>
@@ -394,12 +390,12 @@
       <workItem from="1557141641405" duration="3584000" />
       <workItem from="1557225756187" duration="3523000" />
       <workItem from="1557233276407" duration="13880000" />
-      <workItem from="1557314110547" duration="1174000" />
+      <workItem from="1557314110547" duration="2534000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="176773000" />
+    <option name="totallyTimeSpent" value="178133000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -561,23 +557,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/dashboard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="39" column="78" selection-start-line="39" selection-start-column="78" selection-end-line="39" selection-end-column="78" />
-          <folding>
-            <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#a#0;n#li#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/members.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="503">
           <caret line="42" column="66" lean-forward="true" selection-start-line="42" selection-start-column="66" selection-end-line="42" selection-end-column="66" />
           <folding>
             <element signature="e#6#88#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="71" column="6" selection-start-line="71" selection-start-column="6" selection-end-line="71" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#a#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
