@@ -1004,67 +1004,174 @@
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
     <table id="255" parent="16" name="categories"/>
-    <table id="256" parent="16" name="users"/>
-    <column id="257" parent="255" name="id">
+    <table id="256" parent="16" name="items">
+      <Collation>utf8mb4_general_ci</Collation>
+    </table>
+    <table id="257" parent="16" name="users"/>
+    <column id="258" parent="255" name="id">
       <Position>1</Position>
-      <DataType>smallint(6)|0s</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="258" parent="255" name="name">
+    <column id="259" parent="255" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="259" parent="255" name="description">
+    <column id="260" parent="255" name="description">
       <Position>3</Position>
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="260" parent="255" name="ordering">
+    <column id="261" parent="255" name="ordering">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="261" parent="255" name="visibility">
+    <column id="262" parent="255" name="visibility">
       <Position>5</Position>
       <DataType>tinyint(4)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="262" parent="255" name="allowComment">
+    <column id="263" parent="255" name="allowComment">
       <Position>6</Position>
       <DataType>tinyint(4)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="263" parent="255" name="allowAds">
+    <column id="264" parent="255" name="allowAds">
       <Position>7</Position>
       <DataType>tinyint(4)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="264" parent="255" name="name">
+    <index id="265" parent="255" name="name">
       <ColNames>name</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="265" parent="255" name="PRIMARY">
+    <key id="266" parent="255" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="266" parent="255" name="name">
+    <key id="267" parent="255" name="name">
       <ColNames>name</ColNames>
       <UnderlyingIndexName>name</UnderlyingIndexName>
     </key>
-    <column id="267" parent="256" name="userId">
+    <column id="268" parent="256" name="itemId">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="269" parent="256" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+      <Collation>utf8_general_ci</Collation>
+    </column>
+    <column id="270" parent="256" name="description">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="271" parent="256" name="price">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="272" parent="256" name="addDate">
+      <Position>5</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="273" parent="256" name="countryMade">
+      <Position>6</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="274" parent="256" name="img">
+      <Position>7</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="275" parent="256" name="status">
+      <Position>8</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="276" parent="256" name="rating">
+      <Position>9</Position>
+      <DataType>smallint(6)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="277" parent="256" name="catId">
+      <Position>10</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="278" parent="256" name="memberId">
+      <Position>11</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="279" parent="256" name="approve">
+      <Position>12</Position>
+      <DataType>tinyint(4)|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="280" parent="256" name="cat1">
+      <ColNames>catId</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="281" parent="256" name="member1">
+      <ColNames>memberId</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="282" parent="256" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>itemId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="283" parent="256" name="cat1">
+      <ColNames>catId</ColNames>
+      <RefSchemaName>shop</RefSchemaName>
+      <RefTableName>categories</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="284" parent="256" name="member1">
+      <ColNames>memberId</ColNames>
+      <RefSchemaName>shop</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>userId</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="285" parent="257" name="userId">
       <Position>1</Position>
       <Comment>to identify user</Comment>
       <DataType>int(11)|0s</DataType>
@@ -1072,33 +1179,33 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="268" parent="256" name="userName">
+    <column id="286" parent="257" name="userName">
       <Position>2</Position>
       <Comment>user name to login</Comment>
       <DataType>varchar(225)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="269" parent="256" name="password">
+    <column id="287" parent="257" name="password">
       <Position>3</Position>
       <Comment>password to login</Comment>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="270" parent="256" name="email">
+    <column id="288" parent="257" name="email">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="271" parent="256" name="fullName">
+    <column id="289" parent="257" name="fullName">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="272" parent="256" name="groupId">
+    <column id="290" parent="257" name="groupId">
       <Position>6</Position>
       <Comment>to identify user group</Comment>
       <DataType>int(11)|0s</DataType>
@@ -1106,7 +1213,7 @@
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="273" parent="256" name="trustStatus">
+    <column id="291" parent="257" name="trustStatus">
       <Position>7</Position>
       <Comment>seller rank</Comment>
       <DataType>int(11)|0s</DataType>
@@ -1114,7 +1221,7 @@
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="274" parent="256" name="regstatus">
+    <column id="292" parent="257" name="regstatus">
       <Position>8</Position>
       <Comment>user approvel</Comment>
       <DataType>int(11)|0s</DataType>
@@ -1122,13 +1229,13 @@
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="275" parent="256" name="date">
+    <column id="293" parent="257" name="date">
       <Position>9</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="276" parent="256" name="PRIMARY">
+    <key id="294" parent="257" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>userId</ColNames>
       <Primary>1</Primary>

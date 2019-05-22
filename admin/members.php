@@ -113,7 +113,7 @@ if (isset($_SESSION['userName'])) {
 
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            echo '<h1 class="text-center">Update Member</h1>';
+            echo '<h1 class="text-center">insert Member</h1>';
             echo '<div class="container">';
             $user = $_POST['username'];
             $pass = $_POST['password'];

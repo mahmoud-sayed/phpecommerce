@@ -16,7 +16,7 @@
                     <div class="status Members-style"><a href="members.php?do=Manage&page=pending">pending Members<span><?php echo checkItems('regstatus', 'users', 0)?></span></a></div>
                 </div>
                 <div class="col-md-3">
-                    <div class="status Items-style">total Items<span>25</span></div>
+                    <div class="status Items-style"><a href="items.php?do=Manage">total Items<span><?php echo countItems('itemId', 'items')?></span></a></div>
                 </div>
                 <div class="col-md-3">
                     <div class="status comments-style">total comments<span>25</span>   </div>

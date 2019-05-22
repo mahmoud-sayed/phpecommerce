@@ -17,7 +17,7 @@ function gitTitle(){
      */
 function redirectToHome($theMessage, $url= null, $seconds = 3){
     if ($url === null){
-        $url = 'index.php';
+        $url = 'dashboard.php';
     }else{
         if (isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] !== ''){
             $url = $_SERVER['HTTP_REFERER'];
@@ -51,7 +51,7 @@ function redirectToHome($theMessage, $url= null, $seconds = 3){
 /*
  * count number of functions
  * function to count number of items
- * $items = the items to count or to git the numbes form the table
+ * $items = the items to count or to git the    numbes form the table
  * $table = the table to chose from
  */
 function countItems($items, $table){
