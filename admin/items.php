@@ -34,7 +34,7 @@ if (isset($_SESSION['userName'])) {
                                               users.userId = items.memberId");
         $stmt->execute();
         $items = $stmt->fetchAll();
-
+        if (!empty($items)){
         ?>
 
         <h1 class="text-center">Manage Item</h1>
@@ -79,6 +79,15 @@ if (isset($_SESSION['userName'])) {
             <a href="items.php?do=add" class="btn btn-primary" style="margin-top: 15px"><i class="fa fa-plus"></i>New
                 item</a>
         </div>
+            <?php
+        }else{
+            echo '<div class="container">';
+            echo '<div class="alert-info" style="margin-top: 150px; font-size: 50px; text-align: center;">there is no comments yet</div>';
+            echo'<a href="items.php?do=add" class="btn btn-primary" style="margin-top: 15px"><i class="fa fa-plus"></i>New
+                item</a>';
+            echo '</div>';
+        }
+        ?>
 
 
         <?php
@@ -390,6 +399,53 @@ if (isset($_SESSION['userName'])) {
                     <!-- end username filed -->
                 </form>
 
+
+                <?php
+                $stmt = $con->prepare("SELECT comments.*,users.userName AS userName
+                FROM  comments
+                INNER JOIN
+                users
+                ON
+                users.userId = comments.userId
+                WHERE itemId = ?");
+                $stmt->execute([$itemId]);
+                $rows = $stmt->fetchAll();
+                if (!empty($rows)){
+                ?>
+
+                <h1 class="text-center">Manage <?php echo $item['name']; ?>  Comments</h1>
+                <table class="text-center table-bordered container ">
+                    <thead class="btn-dark">
+                    <tr>
+                        <th>comment</th>
+                        <th>User Name</th>
+                        <th>Added Data</th>
+                        <th>control</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    foreach ($rows as $row){
+                        echo '<tr>';
+                        echo '<td>' . $row['comment'] . '</td>';
+                        echo '<td>' . $row['userName'] . '</td>';
+                        echo '<td>' . $row['commentDate'] . '</td>';
+
+                        echo '<td>' .
+                            '<a href="comment.php?do=edit&commentId=' .$row['commentId'] . '" class="btn btn-success ">' .'<i class="fa fa-edit"></i>'. 'Edit' . '</a>' .
+                            '<a href="comment.php?do=Delete&commentId=' .$row['commentId'] . '" class="btn btn-danger confirm activate">'.'<i class="fa fa-trash"></i>' . 'Delete' . '</a>';
+                        if ($row['status'] == 0){
+                            echo ''. '<a href="comment.php?do=activate&commentId=' .$row['commentId'] . '" class="btn btn-primary activate activate">'.'<i class="fa fa-check"></i>' . 'approve' . '</a>';
+                        }
+                        echo '</td>';
+
+                        echo '</tr>';
+                    }
+
+                    ?>
+                    </tbody>
+                </table>
+                <?php }?>
             </div>
 
 

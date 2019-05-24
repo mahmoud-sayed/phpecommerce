@@ -13,6 +13,7 @@
               <li><a class="nav-link" href="items.php"><?php echo lang('items')?></a></li>
               <li><a class="nav-link" href="members.php"><?php echo lang('members')?></a></li>
               <li><a class="nav-link" href="#"><?php echo lang('statistics')?></a></li>
+              <li><a class="nav-link" href="comment.php"><?php echo lang('comments')?></a></li>
               <li><a class="nav-link" href="#"><?php echo lang('logs')?></a></li>
                 <div class="col-lg-12">
                   <li class="nav-item dropdown">

@@ -14,6 +14,7 @@ if (isset($_SESSION['userName'])) {
     $do = isset($_GET['do']) ? $_GET['do'] : 'Manage';
 
     if ($do == 'Manage') {
+
         $sort = 'ASC';
         $sortArray = array('ASC','DESC');
         if (isset($_GET['sort']) && in_array($_GET['sort'], $sortArray)){
@@ -22,47 +23,85 @@ if (isset($_SESSION['userName'])) {
         $stmt2 = $con->prepare("SELECT * FROM categories ORDER BY ordering $sort");
         $stmt2->execute();
         $Categorys = $stmt2->fetchAll();
-        ?>
-        <h1 class="text-center">Manage Category</h1>
-        <div class="container">
-            <div class="border-left" style="">
-            Ordering:
-                <a class="<?php if ($sort == 'ASC'){echo 'btn btn-danger';} ?>" href="categories.php?sort=ASC">ASC</a>
-                <a class="<?php if ($sort == 'DESC'){echo 'btn btn-danger';} ?>" href="categories.php?sort=DESC">DESC</a>
-            </div>
-        <table class="text-center table-bordered container ">
-            <thead class="btn-dark">
-            <tr>
-                <th>name</th>
-                <th>description</th>
-                <th>visibility</th>
-                <th>allowComment</th>
-                <th>allowAds</th>
-                <th>Control</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php
-            foreach ($Categorys as $Category){
-                echo '<tr>';
-                echo '<td><h3>' . $Category['name'] . '</h3></td>';
-                echo '<td><p>'; if ($Category['description'] == ''){echo 'there is no description';}else{echo $Category['description'];} echo '</p></td>';
-                echo '<td>';if ($Category['visibility'] == 1){echo '<p class="btn btn-warning">Hidden</p>';}else{ echo '';} echo '</td>';
-                echo '<td>';if ($Category['allowComment'] == 1){echo '<p class="btn btn-warning">Commenting disabled</p>';}else{echo 'you can Comment';}echo '</td>';
-                echo '<td>';if ($Category['allowAds'] == 1){echo '<p class="btn btn-warning">ads disabled</p>';}else{echo 'you can\'t add ads';} echo '</td>';
-                echo '<td>' .
-                    '<a href="categories.php?do=edit&catId=' .$Category['id'] . '" class="btn btn-success confirm">' .'<i class="fa fa-edit"></i>'. 'Edit' . '</a>' .
-                    '<a href="categories.php?do=Delete&catId=' .$Category['id'] . '" class="btn btn-danger confirm activate">'.'<i class="fa fa-trash"></i>' . 'Delete' . '</a>';
-                echo '</td>';
-                echo '</tr>';
-                echo 'sort';
-            }
-
+        if (!empty($Categorys)) {
             ?>
-            </tbody>
-        </table>
-        <a href="categories.php?do=add" class="btn btn-primary" style="margin-top: 15px"><i class="fa fa-plus"></i>New Category</a>
+            <h1 class="text-center">Manage Category</h1>
+            <div class="container">
+                <div class="border-left" style="">
+                    Ordering:
+                    <a class="<?php if ($sort == 'ASC') {
+                        echo 'btn btn-danger';
+                    } ?>" href="categories.php?sort=ASC">ASC</a>
+                    <a class="<?php if ($sort == 'DESC') {
+                        echo 'btn btn-danger';
+                    } ?>" href="categories.php?sort=DESC">DESC</a>
+                </div>
+                <table class="text-center table-bordered container ">
+                    <thead class="btn-dark">
+                    <tr>
+                        <th>name</th>
+                        <th>description</th>
+                        <th>visibility</th>
+                        <th>allowComment</th>
+                        <th>allowAds</th>
+                        <th>Control</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    foreach ($Categorys as $Category) {
+                        echo '<tr>';
+                        echo '<td><h3>' . $Category['name'] . '</h3></td>';
+                        echo '<td><p>';
+                        if ($Category['description'] == '') {
+                            echo 'there is no description';
+                        } else {
+                            echo $Category['description'];
+                        }
+                        echo '</p></td>';
+                        echo '<td>';
+                        if ($Category['visibility'] == 1) {
+                            echo '<p class="btn btn-warning">Hidden</p>';
+                        } else {
+                            echo '';
+                        }
+                        echo '</td>';
+                        echo '<td>';
+                        if ($Category['allowComment'] == 1) {
+                            echo '<p class="btn btn-warning">Commenting disabled</p>';
+                        } else {
+                            echo 'you can Comment';
+                        }
+                        echo '</td>';
+                        echo '<td>';
+                        if ($Category['allowAds'] == 1) {
+                            echo '<p class="btn btn-warning">ads disabled</p>';
+                        } else {
+                            echo 'you can\'t add ads';
+                        }
+                        echo '</td>';
+                        echo '<td>' .
+                            '<a href="categories.php?do=edit&catId=' . $Category['id'] . '" class="btn btn-success confirm">' . '<i class="fa fa-edit"></i>' . 'Edit' . '</a>' .
+                            '<a href="categories.php?do=Delete&catId=' . $Category['id'] . '" class="btn btn-danger confirm activate">' . '<i class="fa fa-trash"></i>' . 'Delete' . '</a>';
+                        echo '</td>';
+                        echo '</tr>';
+                        echo 'sort';
+                    }
 
+                    ?>
+                    </tbody>
+                </table>
+                <a href="categories.php?do=add" class="btn btn-primary" style="margin-top: 15px"><i
+                            class="fa fa-plus"></i>New Category</a>
+            </div>
+            <?php
+        }else{
+            echo '<div class="container">';
+            echo '<div class="alert-info" style="margin-top: 150px; font-size: 50px; text-align: center;">there is no comments yet</div>';
+            echo'<a href="categories.php?do=add" class="btn btn-primary" style="margin-top: 15px"><i class="fa fa-plus"></i>New Category</a>';
+            echo '</div>';
+        }
+            ?>
         <?php
     }elseif ($do == 'add'){
         ?>

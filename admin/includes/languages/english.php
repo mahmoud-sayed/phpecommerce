@@ -8,6 +8,7 @@ function lang( $phrase ){
         'items'=>'Items',
         'members'=>'Members',
         'statistics'=>'Statistics',
+        'comments' =>'Comments',
         'logs'=>'Logs',        
         'admin_name'=>'Mahmoud',
             'Edit'=>'Edit Profile',

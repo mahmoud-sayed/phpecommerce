@@ -18,7 +18,7 @@ if (isset($_SESSION['userName'])) {
             $stmt = $con->prepare("SELECT * FROM users WHERE groupId !=1 $query");
             $stmt->execute();
             $rows = $stmt->fetchAll();
-
+            if (!empty($rows)){
         ?>
 
         <h1 class="text-center">Add Member</h1>
@@ -60,7 +60,14 @@ if (isset($_SESSION['userName'])) {
             </table>
             <a href="members.php?do=add" class="btn btn-primary" style="margin-top: 15px"><i class="fa fa-plus"></i>New member</a>
         </div>
-
+                <?php
+            }else{
+                echo '<div class="container">';
+                echo '<div class="alert-info" style="margin-top: 150px; font-size: 50px; text-align: center;">there is no comments yet</div>';
+                echo'<a href="members.php?do=add" class="btn btn-primary" style="margin-top: 15px"><i class="fa fa-plus"></i>New member</a>';
+                echo '</div>';
+            }
+        ?>
 
         <?php
     } elseif ($do == 'add') {
@@ -242,7 +249,7 @@ if (isset($_SESSION['userName'])) {
             </div>
 
 
-            <?php
+            <?php   
         } else { // else if there is what i order show what i do
             $theMessage = 'there is no id';
             redirectToHome($theMessage,'back');
