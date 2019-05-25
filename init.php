@@ -1,6 +1,6 @@
 <?php
 
-	include 'connect.php';      // to print the massage in the admin index
+	include 'admin/connect.php';      // to print the massage in the admin index
 
 	// start Routs
 	$tpl = 'includes/templets/';  // rout for templates
@@ -15,9 +15,3 @@
     include  $lang . 'english.php';
 	include  $tpl . 'header.php';
 
-	
-	
-	if(!isset($noNavBar))
-	{
-	 include  $tpl . 'navbar.php'; 
-	}

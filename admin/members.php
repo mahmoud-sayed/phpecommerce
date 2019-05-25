@@ -249,7 +249,7 @@ if (isset($_SESSION['userName'])) {
             </div>
 
 
-            <?php   
+            <?php
         } else { // else if there is what i order show what i do
             $theMessage = 'there is no id';
             redirectToHome($theMessage,'back');
