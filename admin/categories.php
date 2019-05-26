@@ -97,7 +97,7 @@ if (isset($_SESSION['userName'])) {
             <?php
         }else{
             echo '<div class="container">';
-            echo '<div class="alert-info" style="margin-top: 150px; font-size: 50px; text-align: center;">there is no comments yet</div>';
+            echo '<div class="alert-info" style="margin-top: 150px; font-size: 50px; text-align: center;">there is no Categorys yet</div>';
             echo'<a href="categories.php?do=add" class="btn btn-primary" style="margin-top: 15px"><i class="fa fa-plus"></i>New Category</a>';
             echo '</div>';
         }
@@ -377,10 +377,9 @@ if (isset($_SESSION['userName'])) {
 
                 // the next statment will put the data in the database
                 $stmt = $con->prepare("UPDATE categories SET name = ?, description = ?, ordering =?, visibility = ?, allowComment = ?, allowAds = ? WHERE id = ? ");
-                print_r([$name, $description, $ordering, $visibility, $commenting, $Ads, $id]);
                 $stmt->execute(array($name, $description, $ordering, $visibility, $commenting, $Ads, $id));
                 $theMessage = '<div class="container alert alert-success">' . $stmt->rowCount() . 'have been updated</div>';
-                redirectToHome($theMessage,'back');
+                redirectToHome($theMessage, $_SERVER['HTTP_REFERER' ] = 'categories.php');
 
             }
 

@@ -64,7 +64,7 @@ if (isset($_SESSION['userName'])) {
                     echo '<td>' . $item['catName'] . '</td>';
                     echo '<td>' . $item['userName'] . '</td>';
                     echo '<td>' .
-                        '<a href="items.php?do=edit&itemId=' . $item['itemId'] . '" class="btn btn-success ">' . '<i class="fa fa-edit"></i>' . 'Edit' . '</a>' .
+                        '<a href="items.php?do=edit&itemId=' . $item['itemId'] . '" class="btn btn-success">' . '<i class="fa fa-edit"></i>' . 'Edit' . '</a>' .
                         '<a href="items.php?do=Delete&itemId=' . $item['itemId'] . '" class="btn btn-danger confirm activate">' . '<i class="fa fa-trash"></i>' . 'Delete' . '</a>';
                         if ($item['approve'] == 0){
                             echo ''. '<a href="items.php?do=approve&itemId=' .$item['itemId'] . '" class="btn btn-primary activate activate">'.'<i class="fa fa-check"></i>' . 'approve' . '</a>';
@@ -82,7 +82,7 @@ if (isset($_SESSION['userName'])) {
             <?php
         }else{
             echo '<div class="container">';
-            echo '<div class="alert-info" style="margin-top: 150px; font-size: 50px; text-align: center;">there is no comments yet</div>';
+            echo '<div class="alert-info" style="margin-top: 150px; font-size: 50px; text-align: center;">there is no items yet</div>';
             echo'<a href="items.php?do=add" class="btn btn-primary" style="margin-top: 15px"><i class="fa fa-plus"></i>New
                 item</a>';
             echo '</div>';

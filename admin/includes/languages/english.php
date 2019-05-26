@@ -11,6 +11,7 @@ function lang( $phrase ){
         'comments' =>'Comments',
         'logs'=>'Logs',        
         'admin_name'=>'Mahmoud',
+            'index'=>'Visit shop',
             'Edit'=>'Edit Profile',
             'Settings'=>'Settings',
             'Logout'=>'Logout',

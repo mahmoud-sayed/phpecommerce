@@ -1,4 +1,46 @@
 <?php
+
+// this is the website functions
+
+/*
+ * get records function V1.0
+ * function to get categories form database
+ */
+
+function getCat(){
+    global $con;
+    $getCat = $con->prepare("SELECT * FROM categories ORDER BY id ASC");
+    $getCat->execute();
+    $cats = $getCat->fetchAll();
+    return $cats;
+}
+
+/*
+ * get items function V1.0
+ * function to get categories form database
+ */
+
+function getItem($catId){
+    global $con;
+    $getItem = $con->prepare("SELECT * FROM items WHERE catId = ?  ORDER BY itemId DESC");
+    $getItem->execute([$catId]);
+    $items = $getItem->fetchAll();
+    return $items;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* this function to echo the page title if it exist */
 
 function gitTitle(){

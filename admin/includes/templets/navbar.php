@@ -21,6 +21,7 @@
                       <?php echo lang('admin_name')?>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="../index.php"><?php echo lang('index')?></a>
                       <a class="dropdown-item" href="members.php?do=edit&userId=<?php echo $_SESSION['id'] ?>"><?php echo lang('Edit')?></a>
                       <a class="dropdown-item" href="#"><?php echo lang('Settings')?></a>
                       <a class="dropdown-item" href="Logout.php"><?php echo lang('Logout')?></a>

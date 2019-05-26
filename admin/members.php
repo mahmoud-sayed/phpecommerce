@@ -63,7 +63,7 @@ if (isset($_SESSION['userName'])) {
                 <?php
             }else{
                 echo '<div class="container">';
-                echo '<div class="alert-info" style="margin-top: 150px; font-size: 50px; text-align: center;">there is no comments yet</div>';
+                echo '<div class="alert-info" style="margin-top: 150px; font-size: 50px; text-align: center;">there is no members yet</div>';
                 echo'<a href="members.php?do=add" class="btn btn-primary" style="margin-top: 15px"><i class="fa fa-plus"></i>New member</a>';
                 echo '</div>';
             }

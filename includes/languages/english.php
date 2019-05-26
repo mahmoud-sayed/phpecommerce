@@ -3,7 +3,7 @@
 function lang( $phrase ){
     static $lang = array(
         //start navebar translation
-        'shop_name'=>'free shop',
+        'Main_Page'=>'Home Page',
         'shop_Categories'=>'Categories',
         'items'=>'Items',
         'members'=>'Members',

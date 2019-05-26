@@ -92,3 +92,24 @@ body {
 /* start categories style*/
 
 /* end categories style*/
+
+
+/* start we site style */
+.login-page .selected
+{
+    color: #b22020;
+}
+.login-page h1
+{
+    color: #c0c0c0;
+}
+.login-page h1 span
+{
+    cursor: pointer;
+}
+
+.login-page .singUp
+{
+    display: none;
+}
+/* end we site style */
