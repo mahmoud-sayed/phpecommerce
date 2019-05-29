@@ -23,7 +23,6 @@
 
         // if count > 0 this mean the  database contain record about this user name
         if($count > 0){
-            print_r($row);
             $_SESSION['userName'] = $username;  // hear we name the register session
             $_SESSION['id']=$row['userId'];
             header('location: dashboard.php');      // hear we say if all statments completed pleas redirect me to the location

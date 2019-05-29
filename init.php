@@ -1,7 +1,14 @@
 <?php
+    //Error Reporting
+    ini_set('display_errors','on');
+    error_reporting(E_ALL);
+
 
 	include 'admin/connect.php';      // to print the massage in the admin index
-
+    $sessionUser = '';
+    if (isset($_SESSION['User'])){
+        $sessionUser = $_SESSION['User'];
+    }
 	// start Routs
 	$tpl = 'includes/templets/';  // rout for templates
 	$css = 'layout/css/';      // rout for css

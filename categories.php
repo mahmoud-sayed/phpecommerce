@@ -7,7 +7,7 @@ include 'init.php';
         <div class="row">
             <?php
             $pagId = $_GET['pageId'];
-            foreach (getItem($pagId) as $item) {
+            foreach (getItem('catId',$pagId) as $item) {
                 echo '<div class="col-sm-6 col-md-3">';
                     echo '<div class="card" style="width: 18rem;">';
                         echo '<img class="card-img-top" src="" alt="Card image cap">';

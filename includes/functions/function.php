@@ -20,12 +20,30 @@ function getCat(){
  * function to get categories form database
  */
 
-function getItem($catId){
+function getItem($where,$value){
     global $con;
-    $getItem = $con->prepare("SELECT * FROM items WHERE catId = ?  ORDER BY itemId DESC");
-    $getItem->execute([$catId]);
+    $getItem = $con->prepare("SELECT * FROM items WHERE $where = ? ORDER BY itemId DESC");
+    $getItem->execute([$value]);
     $items = $getItem->fetchAll();
     return $items;
+}
+
+/*
+ * function to check if user not activated or not
+ * function to check the regstatus in the database
+ */
+function checkeUerStatus($user){
+    global $con;
+    $stmtx = $con->prepare("SELECT userName, regstatus 
+                                    FROM 
+                                          users
+                                    WHERE 
+                                          userName=? 
+                                      AND 
+                                      regstatus=0 ");
+    $stmtx->execute(array($user));
+    $status = $stmtx->rowCount();
+    return $status;
 }
 
 

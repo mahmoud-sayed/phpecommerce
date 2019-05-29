@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title><?php gitTitle(); ?></title>
+
     <link rel="stylesheet" href="<?php echo $css;?>bootstrap.min.css"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo $css;?>frontend.css"/>
@@ -10,7 +11,21 @@
 <body>
 <div class="uppar-bar" style="background-color: #fff">
     <div class="container text-lg-right" >
+        <?php
+
+        if (isset($_SESSION['User'])) {
+        echo 'welcome' . $sessionUser;
+        echo '<a href="profile.php">My Profile</a>';
+        echo ' - <a href="login.php">Logout</a>';
+        $userStatus = checkeUerStatus($sessionUser);
+            if ($userStatus == 1){
+                // hear is the user is not active
+                echo 'user is not active';
+            }
+        }else{
+        ?>
         <a href="login.php">login/Signup</a>
+        <?php } ?>
     </div>
 </div>
 
@@ -26,7 +41,7 @@
                 <?php
                     foreach (getCat() as $cat){
                         echo '<li class="nav-item">
-                                    <a class="nav-link" href="categories.php?pageId=' . $cat['id'] . '&pageName=' . str_replace(' ','-  ' , $cat['name']) . '">' . $cat['name'] . '</a>
+                                    <a class="nav-link" href="categories.php?pageId=' . $cat['id'] . '&pageName=' . str_replace(' ','-' , $cat['name']) . '">' . $cat['name'] . '</a>
                               </li>';
                     }
                 ?>
